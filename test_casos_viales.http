@@ -1,0 +1,49 @@
+@baseUrl = http://127.0.0.1:8000/vial
+
+
+GET {{baseUrl}}/casos_viales_all
+
+###
+
+GET {{baseUrl}}/caso_vial/1
+
+###
+
+GET {{baseUrl}}/casos_viales_por_norma/1
+
+###
+
+POST {{baseUrl}}/caso_vial/crear
+Content-Type: application/json
+
+{
+    "problema_comun": "Ciclista sin luces en la noche",
+    "solucion_legal": "Instalar luces LED y chaleco reflectivo",
+    "id_n": 3
+}
+
+###
+
+POST {{baseUrl}}/caso_vial/crear
+Content-Type: application/json
+
+{
+    "problema_comun": "Moto sin SOAT",
+    "solucion_legal": "Adquirir SOAT obligatorio y portarlo siempre",
+    "id_n": 2
+}
+
+###
+
+PUT {{baseUrl}}/caso_vial/actualizar/1
+Content-Type: application/json
+
+{
+    "problema_comun": "Casco mal puesto o sin abrochar - ACTUALIZADO",
+    "solucion_legal": "Asegurar barboquejo y verificar certificación",
+    "id_n": 1
+}
+
+###
+
+DELETE {{baseUrl}}/caso_vial/borrar/2
